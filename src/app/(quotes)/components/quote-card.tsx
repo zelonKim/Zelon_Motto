@@ -28,10 +28,12 @@ export function QuoteCard({
   const [fav, setFav] = useState(false)
 
   useEffect(() => {
-    const starQuote = localStorage.getItem(quote) // 로컬 스토리지에서 키가 quote인 명언을 불러옴.
-    if (starQuote) {
-      // 해당 명언이 존재할 경우,
-      setFav(true) // 이미 즐겨찾기된 명언으로 저장해줌.
+    if (typeof window !== 'undefined') {
+      const starQuote = localStorage.getItem(quote) // 로컬 스토리지에서 키가 quote인 명언을 불러옴.
+      if (starQuote) {
+        // 해당 명언이 존재할 경우,
+        setFav(true) // 이미 즐겨찾기된 명언으로 저장해줌.
+      }
     }
   }, [quote])
 

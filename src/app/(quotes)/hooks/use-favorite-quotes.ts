@@ -28,8 +28,10 @@ export function useFavQuotes() {
 
   const RTLoadFavorite = useCallback(() => {
     // 로컬 스토리지에 저장된 명언을 실시간 즐겨찾기 명언으로 로드함.
-    const storQuotes = storedFav()
-    setRTFavQuotes(storQuotes!)
+    if (typeof window !== 'undefined') {
+      const storQuotes = storedFav()
+      setRTFavQuotes(storQuotes!)
+    }
   }, [storedFav])
 
   const addFavorite = useCallback(
