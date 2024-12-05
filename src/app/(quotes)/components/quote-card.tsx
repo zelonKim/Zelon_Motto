@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, type HTMLAttributes } from 'react'
+import { useState, useEffect, type HTMLAttributes } from 'react'
 import { cn } from '@/lib/utils'
 import { HeartIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -60,7 +60,7 @@ export function QuoteCard({
       </div>
       <Button
         className="absolute right-2 top-2 p-3 rounded-2xl hover:bg-red-100"
-        onClick={onClick}
+        onClick={() => onClick()}
         variant="ghost"
       >
         {fav ? (
