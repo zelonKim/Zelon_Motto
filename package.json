@@ -2,9 +2,12 @@
   "name": "front-end-assignment",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://zelonkim.github.io/Zelon_Motto",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "predeploy": "npm run build",
+    "deploy": "next build && touch out/.nojekyll && git add -f out/ && git commit -m \"Deploy\" && git subtree push --prefix out origin gh-pages",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write ."
@@ -20,6 +23,7 @@
     "@uidotdev/usehooks": "^2.4.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "gh-pages": "^6.2.0",
     "lodash": "^4.17.21",
     "lucide-react": "^0.453.0",
     "next": "15.0.1",

@@ -3,6 +3,8 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   /* config options here */
+  output: 'export',
+  basePath:'/Zelon_Motto',
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   images: {
     remotePatterns: [
@@ -15,5 +17,7 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
   // Add markdown plugins here, as desired
 })
+
+
 
 export default withMDX(nextConfig)

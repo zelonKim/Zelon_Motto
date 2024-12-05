@@ -27,7 +27,7 @@ export default function QuotesLayout({ children }: PropsWithChildren) {
           <Link href={'/'} className={'inline-flex items-center gap-2'}>
             <Image
               className="rounded-xl mr-1"
-              src={'/greek.avif'}
+              src={'/Zelon_Motto/greek.avif'}
               alt={'logo'}
               width={50}
               height={50}
