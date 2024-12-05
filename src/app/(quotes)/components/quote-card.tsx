@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, type HTMLAttributes } from 'react'
 import { cn } from '@/lib/utils'
-import { StarIcon, HeartIcon } from 'lucide-react'
+import { HeartIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useFavQuotes } from '../hooks/use-favorite-quotes'
 import { Markazi_Text } from 'next/font/google'
@@ -38,16 +38,15 @@ export function QuoteCard({
   const { addFavorite, removeFavorite, RTRemoveFavorite } = useFavQuotes()
 
   const onClick = () => {
-    // 하트 모양 버튼 클릭 시,
     setFav((prevFav) => {
       if (!prevFav) {
-        // 이전에 즐겨찾기가 되지 않았을 경우,
-        addFavorite({ quote, author }) // 즐겨찾기로 추가함.
+        addFavorite({ quote, author })
+      } else if (RTFavPage) {
+        RTRemoveFavorite(quote)
       } else {
-        // 이전에 즐겨찾기가 되었을 경우,
-        RTFavPage ? RTRemoveFavorite(quote) : removeFavorite(quote) // 실시간 즐겨찾기 페이지이면 실시간으로 즐겨찾기를 삭제함. 아니면, 그냥 즐겨찾기를 삭제함.
+        removeFavorite(quote)
       }
-      return !prevFav // 하트 모양을 바꿔줌.
+      return !prevFav
     })
   }
 
