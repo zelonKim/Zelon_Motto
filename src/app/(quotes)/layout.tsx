@@ -20,7 +20,7 @@ export default function QuotesLayout({ children }: PropsWithChildren) {
     <div>
       <header
         className={
-          'bg-blue-100  container fixed rounded-full shadow-md mt-5 ml-5 left-0 top-0 z-50  py-7 pl-10 pr-10'
+          'bg-blue-100  container fixed  -left-5 sm:left-0 md:left-6 lg:left-26 xl:left-[75px] rounded-full shadow-md mt-5 ml-5  top-0 z-50  py-7 pl-10 pr-10'
         }
       >
         <section className={' flex items-center justify-between '}>
@@ -41,7 +41,7 @@ export default function QuotesLayout({ children }: PropsWithChildren) {
               Zelon Motto
             </h2>
           </Link>
-          <h3 className="animate-bounce mt-2 relative left-3 sm:-left-10 md:left-8 lg:left-36 xl:left-[268px] font-semibold text-red-400">
+          <h3 className="animate-bounce mt-2 relative md:left-8 lg:left-36 xl:left-[268px] font-semibold  text-red-400">
             좋아하는 좌우명을 발견하면 하트를 눌러주세요 :)
           </h3>
           <Link

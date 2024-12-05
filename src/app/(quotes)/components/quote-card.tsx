@@ -53,8 +53,10 @@ export function QuoteCard({
   return (
     <main className={cn('relative p-5 border-b', className)} {...props}>
       <div className={cn(markaziText.className)}>
-        <p className={'text-2xl text-blue-500 italic'}>{quote}</p>
-        <small className={'text-lg text-blue-400'}>- {author} -</small>
+        <p className={'text-[28px] text-blue-500 italic font-normal '}>
+          {quote}
+        </p>
+        <small className={'text-2xl text-blue-400'}>- {author} -</small>
       </div>
       <Button
         className="absolute right-2 top-2 p-3 rounded-2xl hover:bg-red-100"
